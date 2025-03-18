@@ -262,7 +262,7 @@ app.get('/lyrics', async (req, res) => {
         if (lyricsResponse.data.message.body.lyrics) {
             res.json({ lyrics: lyricsResponse.data.message.body.lyrics.lyrics_body });
         } else {
-            res.json({ lyrics: "❌ Paroles non disponibles." });
+            res.json({ lyrics: " " });
         }
     } catch (error) {
         console.error("❌ Erreur récupération paroles Musixmatch :", error.response?.data || error.message);
