@@ -69,7 +69,16 @@ Le navigateur s’ouvrira automatiquement sur la **page d’authentification Spo
 ### Contrôle de la lecture :
 
 -   **Webcam** : Utilisez la caméra pour envoyer des commandes via les **gestes reconnus** par le modèle **Teachable Machine**.
--   **Boutons de contrôle** : Interface intuitive avec boutons pour **lecture/pause, précédent/suivant et réglage du volume**.
+
+Détails des commandes de mouvement :
+
+-   Mettre play : Pouce en l'air
+-   Mettre pause : Pouce en bas
+-   Chanson suivante : Pointer du doigt sur la droite
+-   Chanson précédente : Pointer du doigt sur la gauche
+-   Monter le son : Pointer du doigt vers le haut
+-   Baisser le son : Pointer du doigt vers le bas
+-   Boutons de contrôle : Interface intuitive avec boutons pour lecture/pause, précédent/suivant et réglage du volume.
 
 ### Affichage dynamique :
 
@@ -88,39 +97,6 @@ server.js      -> Serveur Express (auth Spotify, gestion des commandes)
 script.js      -> Logique client (webcam, IA, animation des paroles)
 .env           -> Fichier de configuration des API
 ```
-
----
-
-## 🤝 Contribuer
-
-Les contributions sont **les bienvenues** ! 🎉
-
-1. **Forkez** ce dépôt.
-2. **Créez une branche** pour votre fonctionnalité :
-
-    ```bash
-    git checkout -b feature/nouvelle-fonctionnalite
-    ```
-
-3. **Commitez vos modifications** :
-
-    ```bash
-    git commit -am "Ajout d'une nouvelle fonctionnalité"
-    ```
-
-4. **Poussez sur votre fork** :
-
-    ```bash
-    git push origin feature/nouvelle-fonctionnalite
-    ```
-
-5. **Ouvrez une Pull Request**.
-
----
-
-## 📜 Licence
-
-Ce projet est sous **licence MIT**.
 
 ---
 
