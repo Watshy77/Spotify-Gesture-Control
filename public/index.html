@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachable Machine + Spotify</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Importation de TensorFlow.js pour l'exécution de modèles ML -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <!-- Importation de Teachable Machine pour la reconnaissance d'images -->
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+</head>
+<body onload="init()">
+    <div class="container">
+    
+        <!-- SECTION GAUCHE : Boutons de contrôle -->
+        <div class="left-section">
+            <h2>🎛️ Contrôles</h2>
+            <!-- Boutons pour contrôler la lecture sur Spotify -->
+            <div class="controls">
+                <button onclick="executeCommand('previous')">⏮️ Précédent</button>
+                <button onclick="executeCommand('play')">▶️ Jouer</button>
+                <button onclick="executeCommand('pause')">⏸️ Pause</button>
+                <button onclick="executeCommand('next')">⏭️ Suivant</button>
+            </div>
+            <!-- Boutons pour ajuster le volume -->
+            <div class="controls">
+                <button onclick="executeCommand('volume/down')">🔉 Volume -</button>
+                <button onclick="executeCommand('volume/up')">🔊 Volume +</button>
+            </div>
+        </div>
+        
+        <!-- SECTION CENTRALE : Webcam et informations sur le morceau en cours -->
+        <div class="center-section">
+            <h1>🎵 Contrôle Spotify avec Ta Caméra ou Boutons</h1>
+            <p>Utilise les gestes ou les boutons ci-dessous pour contrôler ta musique !</p>
+            
+            <!-- Conteneur pour afficher la vidéo de la webcam -->
+            <div class="webcam-wrapper">
+                <div id="webcam-container"></div>
+            </div>
+            
+            <!-- Affichage des informations du morceau en cours (pochette, titre, artiste) -->
+            <div id="track-info">
+                <img id="album-cover" src="" alt="Pochette de l'album" style="display: none;">
+                <p id="track-title">🎵 Titre : <span>...</span></p>
+                <p id="track-artist">👨‍🎤 Artiste : <span>...</span></p>
+            </div>
+        </div>
+        
+        <!-- SECTION DROITE : Statut de l'application Spotify -->
+        <div class="right-section">
+            <h2>📢 Statut</h2>
+            <div id="status">📢 En attente...</div>
+        </div>
+        
+        <!-- Conteneur pour afficher les labels générés par Teachable Machine -->
+        <div id="label-container"></div>
+        
+    </div>
+    
+    <!-- Importation de Color Thief pour extraire les couleurs d'une image (utile pour l'arrière-plan, par exemple) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.min.js"></script>
+    <!-- Script principal de l'application -->
+    <script src="script.js"></script>
+</body>
+<!-- Conteneur pour l'arrière-plan des paroles affichées -->
+<div id="lyrics-background"></div>
+</html>

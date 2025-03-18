@@ -1,0 +1,137 @@
+/* Réinitialisation globale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Style de base du body */
+body {
+    background: linear-gradient(135deg, #1DB954, #191414);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Conteneur principal */
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Section centrale : webcam et infos du morceau */
+.center-section {
+    flex: 2;
+    text-align: center;
+}
+
+.webcam-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#webcam-container canvas {
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+#track-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#track-info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#track-title, #track-artist {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Section gauche : boutons de contrôle */
+.left-section {
+    flex: 1;
+    text-align: left;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #1DB954;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    text-align: left;
+}
+
+button:hover {
+    background-color: #17a44b;
+}
+
+/* Section droite : statut Spotify */
+.right-section {
+    flex: 1;
+    text-align: right;
+}
+
+#status {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    background: #333;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Conteneur de labels (masqué) */
+#label-container {
+    display: none;
+}
+
+/* Arrière-plan des paroles */
+#lyrics-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.lyrics-word {
+    position: absolute;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.2);
+    font-family: 'Arial', sans-serif;
+    white-space: nowrap;
+}
